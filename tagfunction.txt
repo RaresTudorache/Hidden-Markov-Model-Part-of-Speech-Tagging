@@ -1,0 +1,52 @@
+  def tag(self, observations):
+        """
+        Tag a new sentence using the trained model and already initialised data structures.
+
+        :param observations: List of words (a sentence) to be tagged
+        :type observations: list(str)
+        :return: List of tags corresponding to each word of the input
+        """
+  
+        for i in range(1,len(observations)): # for each word in the sentence(omiting the first word)
+            t = observations[i]
+            t_prime = observations[i-1]
+            for s in self.states: # for each state
+                #s = self.states[j]
+                list_of_total_costs = []
+                for s_prime in self.states:
+                    #s_prime = self.states[k]
+                    #s_prime = self.get_backpointer_value(s,t_prime)# tagul cuvantului trecut
+                    emission_cost = self.elprob(s_prime,t)
+                    transition_cost = self.tlprob(s,s_prime)  # transition de la tagu cuv trecut la tagul recent
+                    #total cost = costul cuvantului trecut + costul emisiei + costul tranzitiei de la tagul cuv trecut la tagul recent
+                    #self.get_viterbi_value(s,t_prime) este valoarea de dinainte(de unde vii)
+                    total_cost = -(self.get_viterbi_value(s,t_prime) + emission_cost + transition_cost)
+                    list_of_total_costs.append(total_cost)
+                self.viterbi[s].append(min(list_of_total_costs))
+                self.backpointer[s].append(self.states[list_of_total_costs.index(min(list_of_total_costs))])
+
+        list_of_terminations = []          
+        for state in self.states:
+            cost = self.tlprob(state, "</s>")
+            list_of_terminations.append(cost + self.viterbi[state][len(observations)-1])
+
+        bestprob = min(list_of_terminations)   #this is the best termination cost
+
+        bestpath = self.states[list_of_terminations.index(bestprob)]  #this is the best termination state
+        tags = []
+        tags.append(bestpath)
+
+        for words in range(len(tags)):
+            tags.append(self.backpointer[words][len(observations)-1-words])
+            
+        
+
+        # TODO
+        # Add a termination step with cost based solely on cost of transition to </s> , end of sentence.
+
+        # TODO
+        # Reconstruct the tag sequence using the backpointer list.
+        # Return the tag sequence corresponding to the best path as a list.
+        # The order should match that of the words in the sentence.
+
+        return tags

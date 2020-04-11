@@ -1,0 +1,17 @@
+a1a=['.', 'ADJ', 'ADP', 'ADV', 'CONJ', 'DET', 'NOUN', 'NUM', 'PRON', 'PRT', 'VERB', 'X']
+a1b=2649
+a1c=12.05988565013656
+a1d='function'
+a2a=13
+a2b=2.4630453700815003
+a4a3=0.8521666820659706
+a4b1=[('In', 'ADP'), ('every', 'DET'), ('aspect', 'NOUN'), ('of', 'ADP'), ('service', 'NOUN'), ('--', '.'), ('to', 'ADP'), ('the', 'DET'), ('public', 'ADJ'), (',', '.'), ('to', 'ADP'), ('children', 'NOUN'), ('in', 'ADP'), ('schools', 'NOUN'), (',', '.'), ('to', 'ADP'), ('colleges', 'NOUN'), ('and', 'CONJ'), ('universities', 'NOUN'), ('--', '.'), ('the', 'DET'), ('library', 'NOUN'), ('of', 'ADP'), ('today', 'NOUN'), ('is', 'VERB'), ('failing', 'VERB'), ('to', 'ADP'), ('render', 'X'), ('vitally', 'X'), ('needed', 'X'), ('services', 'X'), ('.', 'X')]
+a4b2=[('In', 'ADP'), ('every', 'DET'), ('aspect', 'NOUN'), ('of', 'ADP'), ('service', 'NOUN'), ('--', '.'), ('to', 'ADP'), ('the', 'DET'), ('public', 'NOUN'), (',', '.'), ('to', 'ADP'), ('children', 'NOUN'), ('in', 'ADP'), ('schools', 'NOUN'), (',', '.'), ('to', 'ADP'), ('colleges', 'NOUN'), ('and', 'CONJ'), ('universities', 'NOUN'), ('--', '.'), ('the', 'DET'), ('library', 'NOUN'), ('of', 'ADP'), ('today', 'NOUN'), ('is', 'VERB'), ('failing', 'VERB'), ('to', 'PRT'), ('render', 'VERB'), ('vitally', 'ADV'), ('needed', 'VERB'), ('services', 'NOUN'), ('.', '.')]
+a4b3="We could observe that in this case a few words were wrongly tagged by our model as 'X'(foreign word). This might be the case because of two cases. Either the transition probability from X to X is very high in our corpus or the emission probability from X to word is very high."
+a4c=56.630575309531835
+a4d=308.71227854747974
+a4e=['DET', 'NOUN', 'ADP', 'DET', 'NOUN', 'VERB', 'ADV']
+a5='There are several ways of handling the issue presented above. One of them would be to have an average\nemission probability and replace the missing values with that. In this way we ensure that most of the \nprobabilities will be realistic. Another way would be to use smoothing when doing the conditional probability\ndistribution which would give enough weight to those missing values. '
+a6="We know that the clompexity of our model is TxS^2 where T is the number of words and S is the number\nof tags. Therefore, having many states would require a lot of calculations.\nAnother reason for converting the tagset to the Universal one would be the size of the \ntraining set. We don't have a very large training set, so having a smaller tagset would give us\na higher accuracy in the end."
+a3c=16.79319240474419
+a3d=0

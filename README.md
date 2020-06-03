@@ -1,6 +1,6 @@
 # Natural-Language-Processing
 
-This assignment will make use of the Natural Language Tool Kit (NLTK) for Python. NLTK is a platform
+I will make use of the Natural Language Tool Kit (NLTK) for Python. NLTK is a platform
 for writing programs to process human language data, that provides both corpora and modules
 
 Hidden Markov Model - Part of Speech Tagging

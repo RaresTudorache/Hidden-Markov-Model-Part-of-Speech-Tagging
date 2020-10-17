@@ -5,4 +5,4 @@ for writing programs to process human language data, that provides both corpora 
 
 Hidden Markov Model - Part of Speech Tagging
 
-Tasks: Training a Hidden Markov Model and Implementing the Viterbi Algorithm using Python(NLTK) 
+Tasks: Training a Hidden Markov Model and Implementing the Viterbi Algorithm using __Python(NLTK)__. 
